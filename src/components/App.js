@@ -97,8 +97,7 @@ class App extends Component {
         <Nav />
         {this.state.currentTvShow == null ? <div><Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} /><TvShowList viewTvShowInfo={this.viewTvShowInfo} tvShows={this.state.tvShows} /></div> : <TvShowInfo closeTvShowInfo={this.closeTvShowInfo} currentTvShow={this.state.currentTvShow} />}
         {this.state.totalResults > 20 && this.state.currentTvShow == null ? <Pagination pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} /> : ''}
-        {this.state.currentMovie == null ? <div><Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} /><MovieList viewMovieInfo={this.viewMovieInfo} movies={this.state.movies} /></div> : <MovieInfo closeMovieInfo={this.closeMovieInfo} currentMovie={this.state.currentMovie} />}
-        {this.state.totalResults > 20 && this.state.currentMovie == null ? <Pagination pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} /> : ''}
+        {this.state.currentMovie == null ? <div><MovieList viewMovieInfo={this.viewMovieInfo} movies={this.state.movies} /></div> : <MovieInfo closeMovieInfo={this.closeMovieInfo} currentMovie={this.state.currentMovie} />}
       </div>
     );
   }
