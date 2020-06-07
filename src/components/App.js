@@ -20,7 +20,35 @@ class App extends Component {
       currentTvShow: null
     }
     this.apiKey = process.env.REACT_APP_API
+    this.guestSessionId= process.env.GUESS_SESSION_ID
   }
+
+
+
+    rateRating = (data) => {
+      try {
+        // Create request to api service
+        const req = fetch(`https://api.themoviedb.org/3/movie/21/rating?api_key=${this.apiKey}&guest_session_id=${this.guestSessionId}`, {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+
+            // format the data
+            body: JSON.stringify({
+                id: data.id
+               
+            }),
+        });
+
+        const res = req.json();
+
+        // Log success message
+        console.log(res);                
+    }catch(err) {
+        console.error(`ERROR: err`);
+    }
+
+      
+    }
 
   handleSubmit = (e) => {
     e.preventDefault();

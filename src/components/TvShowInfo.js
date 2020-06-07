@@ -1,4 +1,5 @@
 import React from 'react';
+import HoverRatings from './HoverRatings';
 
 const TvShowInfo = (props) => {
     return (
@@ -24,6 +25,19 @@ const TvShowInfo = (props) => {
                             <p>{props.currentTvShow.first_air_date} </p>
                             <p>{props.currentTvShow.overview}</p>
                             <p>{props.currentTvShow.vote_average}</p>
+                            
+                        </div>
+
+                    </div>
+                    <div className="container" style={{ paddingTop: 30, paddingBottom: 30 }}>
+                        <div className="row">
+                            <section className="test col s4 offset-s4">
+                                <form onSubmit={props.rateRating} action="">
+                                    <div className="input-field">
+                                        <input placeholder="Rate Movie or TV Shows" onChange={props.HoverRating} id="first_name2" type="text" className="validate" />
+                                    </div>
+                                </form>
+                            </section>
                         </div>
                     </div>
                 </div>
